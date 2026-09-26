@@ -1,0 +1,34 @@
+mini_nn/
+│
+├── README.md
+├── requirements.txt
+├── .gitignore
+│
+├── src/
+│   └── mini_nn/
+│       ├── __init__.py
+│       ├── layers/
+│       │   ├── __init__.py
+│       │   ├── linear.py
+│       │   └── activations.py
+│       │
+│       ├── losses/
+│       │   ├── __init__.py
+│       │   └── mse.py
+│       │
+│       ├── optim/
+│       │   ├── __init__.py
+│       │   └── sgd.py
+│       │
+│       └── sequential.py
+│
+├── tests/
+│   ├── test_linear.py
+│   ├── test_activations.py
+│   └── test_training.py
+│
+├── examples/
+│   └── regression.py
+│
+└── notebooks/
+    └── experiments.ipynb
