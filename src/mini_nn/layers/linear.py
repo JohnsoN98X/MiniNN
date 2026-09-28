@@ -1,6 +1,7 @@
 import numpy as np
+from .base import Layer
 
-class Linear:
+class Linear(Layer):
     def __init__(self, in_features:int, out_features:int):
         """
         Initialize the linear layer.
