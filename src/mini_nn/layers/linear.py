@@ -1,18 +1,32 @@
 import numpy as np
 from .base import Layer
+from mini_nn.init.he_normal import he_normal
+from mini_nn.init.he_uniform import he_uniform 
 
 class Linear(Layer):
-    def __init__(self, in_features:int, out_features:int):
+    def __init__(self, in_features:int, out_features:int, initialize:str=None):
         """
         Initialize the linear layer.
         --- Parameters ---
-        - in_features (int): the shape of the input features. 
-        - out_features (int) - the shape of the output features.
+        in_features: int
+            the shape of the input features. 
+        out_features: int
+            the shape of the output features.
+        initialize: str
+            initialization method. default=None. 
+            possible arguments: "he_normal", "he_uniform"
+
         """
         self.in_features = in_features
         self.out_features = out_features
 
-        self.weight = np.random.randn(in_features, out_features) * 0.01
+        if initialize=='he_normal':
+            self.weight = he_normal(in_features, out_features)
+        elif initialize=='he_uniform':
+            self.weight = he_uniform(in_features, out_features)
+        else:
+            self.weight = np.random.normal(0, 1, size=(in_features, out_features)) * 0.01
+
         self.bias = np.zeros((1, out_features))
 
 
