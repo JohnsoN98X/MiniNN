@@ -1,10 +1,6 @@
 import numpy as np
 from .base import Layer
 
-import numpy as np
-from .base import Layer
-
-
 class ReLu(Layer):
     """
     ReLU layer. Calculates max(0, input).
